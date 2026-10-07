@@ -1,0 +1,36 @@
+[project]
+name = "viscount-aligner"
+version = "0.1.0"
+description = "Sentence alignment pipeline for Il visconte dimezzato and The Cloven Viscount"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "diskcache>=5.6.3",
+    "ebooklib>=0.20",
+    "groq>=0.31.0",
+    "lxml>=6.1.1",
+    "mlx-vlm>=0.6.6",
+    "mlx-whisper>=0.4.3",
+    "numpy>=2.2,<2.4",
+    "openai>=1.101.0",
+    "pydantic>=2.11.0",
+    "python-dotenv>=1.1.1",
+    "sentence-transformers>=5.6.0",
+    "syntok>=1.4.4",
+]
+
+[tool.uv]
+package = true
+
+[tool.setuptools.packages.find]
+include = ["viscount_aligner*"]
+
+[dependency-groups]
+dev = [
+    "playwright>=1.61.0",
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+cache_dir = "artifacts/work/pytest-cache"

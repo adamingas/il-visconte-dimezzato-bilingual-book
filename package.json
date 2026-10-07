@@ -1,0 +1,16 @@
+{
+  "name": "viscount-cloudflare",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:cloudflare": "python3 -m scripts.build_cloudflare_pages",
+    "dev:cloudflare": "npm run build:cloudflare && CLOUDFLARE_LOAD_DEV_VARS_FROM_DOT_ENV=false wrangler pages dev artifacts/deploy/cloudflare-pages",
+    "test:cloudflare": "node --test tests/cloudflare_audio_function.test.mjs",
+    "deploy:cloudflare": "npm run build:cloudflare && wrangler pages deploy artifacts/deploy/cloudflare-pages --project-name viscount --commit-dirty=true",
+    "cloudflare:create-bucket": "wrangler r2 bucket create viscount-audio",
+    "cloudflare:upload-audio": "wrangler r2 object put viscount-audio/il_visconte_dimezzato_EP71iMmmc0Q.webm --remote --file artifacts/site/audio/il_visconte_dimezzato_EP71iMmmc0Q.webm --content-type audio/webm --cache-control \"public, max-age=3600\""
+  },
+  "devDependencies": {
+    "wrangler": "4.112.0"
+  }
+}

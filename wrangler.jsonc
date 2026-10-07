@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "viscount",
+  "pages_build_output_dir": "./artifacts/deploy/cloudflare-pages",
+  "compatibility_date": "2026-07-21",
+  "send_metrics": false,
+  "r2_buckets": [
+    {
+      "binding": "AUDIO_BUCKET",
+      "bucket_name": "viscount-audio"
+    }
+  ]
+}

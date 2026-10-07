@@ -1,0 +1,20 @@
+{
+  "id": "./",
+  "name": "Il visconte dimezzato · The Cloven Viscount",
+  "short_name": "The Cloven Viscount",
+  "description": "An offline Italian-English parallel-text reader with aligned audiobook playback.",
+  "lang": "it",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbfaf7",
+  "theme_color": "#25313a",
+  "icons": [
+    {
+      "src": "app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
