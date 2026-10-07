@@ -16,8 +16,9 @@ is planned separately.
 
 ## Repository layout
 
-All local source material and generated output lives below `artifacts/`, which
-is ignored by Git because it is copyrighted, large, or reproducible.
+All local source material and generated output lives below `artifacts/`. The
+four source EPUBs, generated bilingual EPUB, and audiobook are tracked with
+Git LFS. Other generated output, caches, and intermediate data are ignored.
 
 | Path | Purpose |
 | --- | --- |
@@ -32,6 +33,14 @@ is ignored by Git because it is copyrighted, large, or reproducible.
 
 ## Setup
 
+Install Git LFS before cloning so that the EPUBs and audiobook are downloaded.
+For an existing checkout, initialize Git LFS and fetch the files:
+
+```bash
+git lfs install
+git lfs pull
+```
+
 Install Python and Node dependencies:
 
 ```bash
@@ -40,8 +49,8 @@ npm install
 ```
 
 Audio processing also requires `ffmpeg` and `ffprobe`. Browser verification uses
-Google Chrome. Put the four source EPUBs in `artifacts/sources/` using their
-original filenames, and the audiobook at:
+Google Chrome. The four source EPUBs are in `artifacts/sources/`, and the audiobook
+is at:
 
 ```text
 artifacts/site/audio/il_visconte_dimezzato_EP71iMmmc0Q.webm
@@ -107,5 +116,5 @@ are reconciled with the exact Italian EPUB text so transcription variants do not
 replace the published text or accumulate timing drift. Method details are in
 [docs/audio-alignment-exploration.md](docs/audio-alignment-exploration.md).
 
-Source books and audio are intentionally not committed. Ensure you have the
-right to use and distribute any inputs and generated deployment artifacts.
+Ensure you have the right to use and distribute any inputs and generated
+deployment artifacts.

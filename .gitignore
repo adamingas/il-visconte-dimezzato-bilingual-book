@@ -7,8 +7,17 @@ __pycache__/
 wheels/
 *.egg-info
 
-# All local inputs and generated outputs
-/artifacts/
+# Local artifacts, except EPUBs and audiobook files tracked with Git LFS
+/artifacts/*
+!/artifacts/sources/
+/artifacts/sources/*
+!/artifacts/sources/*.epub
+!/artifacts/site/
+/artifacts/site/*
+!/artifacts/site/*.epub
+!/artifacts/site/audio/
+/artifacts/site/audio/*
+!/artifacts/site/audio/*.webm
 
 # Local environments and downloaded models
 .venv/
